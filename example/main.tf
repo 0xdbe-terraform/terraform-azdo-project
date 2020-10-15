@@ -1,7 +1,7 @@
 module "azdo-project" {
 
   # import module from git repository
-  source = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v0.1.0"
+  source = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v1.0.0"
 
   # Modules vars
   project_name         = "Hello world"

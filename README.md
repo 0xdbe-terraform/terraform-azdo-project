@@ -20,7 +20,7 @@ $ export AZDO_ORG_SERVICE_URL=https://dev.azure.com/<ORGANIZATION>/
 module "azure-devops-bootstrap" {
   
   # Module source
-  source = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v0.1.0"
+  source = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v1.0.0"
   
   # Modules vars
   project_name         = "Hello World"
