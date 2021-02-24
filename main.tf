@@ -3,7 +3,7 @@ data azurerm_subscription current {
 
 # Create Project in Azure DevOps
 resource azuredevops_project main {
-  project_name       = var.application_full_name
+  name       = var.application_full_name
   description        = var.application_description
 }
 
