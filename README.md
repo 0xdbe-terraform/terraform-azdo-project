@@ -15,21 +15,16 @@ $ export AZDO_ORG_SERVICE_URL=https://dev.azure.com/<ORGANIZATION>/
 
 ```hcl
 locals {
-  azure_location               = "eastus"
-  application_full_name        = "HelloWorld"
-  application_short_name       = "HW"
-  application_description      = "A simple demo app in Azure"
-  git_repositories_list        = ["backend", "frontend"]
+  project_name         = "HelloWorld"
+  project_description  = "A simple demo app in Azure"
+  project_repositories = ["frontend", "backend"]
 }
 
 module "azdo-project" {
-  source                       = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v2.0.1"
-  azure_location               = local.azure_location
-  application_full_name        = local.application_full_name
-  application_short_name       = local.application_short_name
-  application_description      = local.application_description
-  application_environment_list = local.application_environment_list
-  git_repositories_list        = local.git_repositories_list
+  source               = "git::https://github.com/0xdbe-terraform/terraform-azure-azdo-project.git?ref=v3.0.1"
+  project_name         = local.project_name
+  project_description  = local.project_description
+  project_repositories = local.project_repositories
 }
 ```
 
