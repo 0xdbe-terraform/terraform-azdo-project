@@ -1,36 +1,14 @@
-variable "azure_location" {
+variable "project_name" {
   type        = string
-  default     = "eastus"
-  description = "Location of the resource in Azure (default: 'eastus', less expensive location)"
+  description = "Name of your project"
 }
 
-variable "application_full_name" {
+variable "project_description" {
   type        = string
-  description = "Name of your project, application, product or service."
+  description = "Description of your project"
 }
 
-variable "application_short_name" {
-  type        = string
-  description = "Short name of your application using abbreviations or acronyms."
-  validation {
-    condition     = can(regex("^\\w+$", var.application_short_name))
-    error_message = "Application short name can only consist of letters and numbers."
-  }
-}
-
-variable "application_environment_list" {
+variable "project_repositories" {
   type        = set(string)
-  default     = ["dev","test","prod"]
-  description = "Name of the environment (example: dev, test, prod, ...)"
-}
-
-variable "application_description" {
-  type        = string
-  description = "Description of your project, application, product or service"
-}
-
-variable "git_repositories_list" {
-  type        = set(string)
-  default     = ["infra","backend","frontend"]
-  description = "list of repositories for this application, product or service"
+  description = "list of repositories for this project"
 }
